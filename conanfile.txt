@@ -6,3 +6,9 @@ cmake
 
 [options]
 opencv:shared=True
+
+# if you need video capabilities, set the following flag to true.
+# Conan will download and compile the world for you. So perhaps
+# in this case you should rely on whatever opencv-dev package your
+# distribution offer.
+opencv:ffmpeg=False
