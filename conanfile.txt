@@ -1,11 +1,19 @@
 [requires]
 opencv/4.3.0@conan/stable
 
+# if you need to recompile opencv on your machine, you need to
+# ovveride glib indirect dependency because otherwise the gtk3
+# library wont be discovered.
+glib/2.64.0@bincrafters/stable
+
 [generators]
 cmake
 
 [options]
 opencv:shared=True
+opencv:gtk=3
+opencv:contrib=True
+opencv:cuda=False
 
 # if you need video capabilities, set the following flag to true.
 # Conan will download and compile the world for you. So perhaps
